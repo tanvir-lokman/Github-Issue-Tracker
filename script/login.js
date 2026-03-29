@@ -11,9 +11,8 @@ document.getElementById("sign-btn").addEventListener("click", function () {
 
 
     if (userin == "admin" && passin == "admin123") {
-        alert("login Success")
-        // window.location.assign("./pages/home.html")
-        window.location.href = './pages/home.html';
+        alert("login Success");
+        window.location.assign("/home.html")
     } else {
         alert("login Failed");
         return;

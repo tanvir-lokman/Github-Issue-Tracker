@@ -2,104 +2,50 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Github Issue Tracker</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Github Issue Tracker</title>
 
-    <!-- Google font  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+  <!-- Google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 
-    <!-- DaisyUl and Tailwind css -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!-- DaisyUl and Tailwind css -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- Font Awsome  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Font Awsome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
 
-    <main class="w-full min-h-screen bg-[#F8FAFC] flex flex-col items-center">
-        <header class="navbar bg-base-100 shadow-sm md:px-15 px-5 py-4 sticky top-0 z-10 md:flex-row flex-col gap-2">
-            <div class="w-full">
-                <a class="text-xl flex items-center" href="#">
-                    <img src="../assets/github-logo.png" alt="GitHub Logo" class="md:size-10 size-5 mr-2" />
-                    <h3 class="font-medium md:text-2xl text-lg">
-                        GitHub Issues Tracker
-                    </h3>
-                </a>
-            </div>
-            <div class="flex items-center justify-between md:min-w-100 w-full">
-                <input type="text" class="input input-bordered w-full" placeholder="Search issues..."
-                    id="searchInput" />
-                <button id="searchBtn" class="btn btn-primary ml-2">
-                    Search
-                </button>
-            </div>
-        </header>
+  <section class=" bg-base-100 shadow-sm pt-[16px] pb-[16px]">
+    <div class="navbar w-11/12 mx-auto  ">
+      <div class="flex-1 flex items-center gap-2">
+        <img class="w-[36px] h-[37px]" src="assets/github-logo.png" alt="">
+        <h1 class="text-[#1F2937] text-2xl font-semibold">GitHub Issues Tracker</h1>
+      </div>
+      <div class="flex gap-2">
+        <input type="text" placeholder="Search issues..." class="input input-bordered w-24 md:w-auto" />
+        <div class="">
+          <button class="btn btn-primary">Search</button>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
+  <!-- Tab Sectionn -->
+  <section>
 
-        <section class="w-full max-w-[1500px] md:p-5 p-2">
-            <!-- TAB MENU -->
-            <div class="card w-full md:mt-10 mt-5 bg-base-100 card-xs shadow-sm">
-                <div class="card-body flex flex-row items-center gap-2 md:p-5 p-3 w-full">
-                    <button data-value="all" class="tabButton btn btn-primary md:px-10">All</button>
-                    <button data-value="open" class="tabButton btn md:px-10 border border-gray-200">
-                        Open
-                    </button>
-                    <button data-value="closed" class="tabButton btn md:px-10 border border-gray-200">
-                        Closed
-                    </button>
-                </div>
-            </div>
+  </section>
 
-            <!-- project issues section -->
-            <div class="card w-full md:mt-10 mt-5 bg-base-100 card-xs shadow-sm">
-                <div
-                    class="flex md:flex-row flex-col md:items-center justify-between gap-2 w-full p-5 border-b border-gray-200">
-                    <div class="flex items-center gap-2">
-                        <img src="../assets/Aperture.png" class="bg-[#ECE4FF] p-2 rounded-full" />
-                        <div class="flex flex-col">
-                            <h2 id="totalIssueCount" class="text-xl font-bold capitalize">0 issues</h2>
-                            <p class="text-gray-400 font-medium text-sm">
-                                Track and manage your project issues
-                            </p>
-                        </div>
-                    </div>
+  <script src="script/main.js"></script>
 
-                    <div class="flex items-center gap-5">
-                        <div class="flex items-center gap-2">
-                            <span class="bg-[#00A96E] text-white p-1 size-3 rounded-full"></span>
-                            <h4 class="font-medium">Open</h4>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <span class="bg-[#A855F7] text-white p-1 size-3 rounded-full"></span>
-                            <h4 class="font-medium">Closed</h4>
-                        </div>
-                    </div>
-                </div>
-                <div id="issueCardContainer"
-                    class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 w-full p-5"></div>
-                <!-- spinner  -->
-                <div id="loadingSpinner" class="h-100 items-center justify-center w-full hidden">
-                    <span class="loading loading-ring loading-xl scale-140"></span>
-                </div>
-                <div id="issueNotFound" class="h-100 flex-col items-center justify-center w-full hidden">
-                    <img src="../assets/notFound.png" alt="not-found"
-                        class="w-50 opacity-60 select-none pointer-events-none">
-                    <h2 class="text-xl font-bold capitalize text-gray-500">No issues found!</h2>
-                </div>
-            </div>
-            <!-- Open the modal using ID.showModal() method -->
-            <dialog id="cardModal" class="modal modal-bottom sm:modal-middle"></dialog>
-        </section>
-    </main>
-
-
-  
 </body>
 
 </html>
