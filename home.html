@@ -22,7 +22,7 @@
 </head>
 
 <body>
-
+  <!-- Nav bar -->
   <section class=" bg-base-100 shadow-sm pt-[16px] pb-[16px]">
     <div class="navbar w-11/12 mx-auto  ">
       <div class="flex-1 flex items-center gap-2">
@@ -39,10 +39,53 @@
     </div>
     </div>
   </section>
-  <!-- Tab Sectionn -->
-  <section>
 
+
+  <!-- Tab Sectionn -->
+
+  <section class="w-full max-w-[1500px] md:p-5 p-2">
+    <div class="card w-full  md:mt-10 mt-5 bg-base-100 card-xs shadow-sm">
+      <div class="card-body flex flex-row items-center  gap-2 md:p-5 p-3 w-full">
+        <button class="btn btn-primary md:px-10">All</button>
+        <button class="btn md:px-10 border border-gray-200">Open</button>
+        <button class="btn md:px-10 border border-gray-200">Closed</button>
+      </div>
+    </div>
   </section>
+
+  <!-- Issue Tab  -->
+
+  <section class="card w-full md:mt-10 mt-5 bg-base-100 card-xs shadow-sm">
+    <div class="flex md:flex-row flex-col md:items-center justify-between gap-2 w-full p-5 border-b border-gray-200">
+
+      <!-- left -->
+
+      <div class="flex gap-2">
+        <img class="bg-[#ECE4FF] p-2 rounded-full" src="assets/Aperture.png" alt="">
+        <div>
+          <h2 class="text-[#1F2937] font-bold text-xl">0 Issues</h2>
+          <p class="text-[#64748B] font-medium text-sm">Track and manage your project issues</p>
+        </div>
+      </div>
+
+      <!-- right  -->
+
+      <div class="flex gap-4">
+        <div class="flex items-center gap-2">
+          <span class="bg-[#00A96E] text-white p-1 size-3 rounded-full"></span>
+          <h4 class="font-medium">Open</h4>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <span class="bg-[#A855F7] text-white p-1 size-3 rounded-full"></span>
+          <h4 class="font-medium">Closed</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
 
   <script src="script/main.js"></script>
 
