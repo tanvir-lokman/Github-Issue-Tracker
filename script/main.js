@@ -141,7 +141,7 @@ function displayIssues(issues) {
         let statusIcon = "./assets/Open-Status.png";
 
         if (issue.status === "closed") {
-            statusIcon = "./a";
+            statusIcon = "./assets/Closed-Status.png";
         }
 
         // icon background
