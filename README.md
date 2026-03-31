@@ -6,3 +6,8 @@ ans -- The spread operator (...), introduced in ES6, is a JavaScript feature tha
 
 <!-- 3️⃣ What is the difference between map(), filter(), and forEach()? -->
 ans -- The primary difference is their purpose and return value: forEach() is for performing an action (side effect) and returns nothing (undefined), while map() and filter() both return a new array based on their operations.
+
+<!-- What is an arrow function? -->
+ans -- Arrow functions, introduced in ES6, are a concise syntax for writing function expressions in JavaScript using the => ("fat arrow") syntax. They are anonymous, lack their own this, arguments, or super bindings, and are ideal for short callbacks, but cannot be used as constructors
+
+
