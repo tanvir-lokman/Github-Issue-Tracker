@@ -10,4 +10,5 @@ ans -- The primary difference is their purpose and return value: forEach() is fo
 <!-- What is an arrow function? -->
 ans -- Arrow functions, introduced in ES6, are a concise syntax for writing function expressions in JavaScript using the => ("fat arrow") syntax. They are anonymous, lack their own this, arguments, or super bindings, and are ideal for short callbacks, but cannot be used as constructors
 
-
+<!-- What are template literals? -->
+ans -- Template literals are a feature in JavaScript that let you work with strings in a more flexible and readable way. They use backticks ( ) instead of single (' ') or double (" ") quotes.
