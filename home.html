@@ -22,70 +22,131 @@
 </head>
 
 <body>
-  <!-- Nav bar -->
-  <section class=" bg-base-100 shadow-sm pt-[16px] pb-[16px]">
-    <div class="navbar w-11/12 mx-auto  ">
-      <div class="flex-1 flex items-center gap-2">
-        <img class="w-[36px] h-[37px]" src="assets/github-logo.png" alt="">
-        <h1 class="text-[#1F2937] text-2xl font-semibold">GitHub Issues Tracker</h1>
-      </div>
-      <div class="flex gap-2">
-        <input type="text" placeholder="Search issues..." class="input input-bordered w-24 md:w-auto" />
-        <div class="">
-          <button class="btn btn-primary">Search</button>
+
+  <main class="w-full min-h-screen bg-[#F8FAFC] flex flex-col items-center">
+
+    <!-- Nav bar -->
+
+    <header class="navbar bg-base-100 shadow-sm pt-[16px] pb-[16px] z-10 sticky top-0 ">
+      <div class="navbar w-11/12 mx-auto  ">
+        <div class="flex-1 flex items-center gap-2">
+          <img class="w-[36px] h-[37px]" src="assets/github-logo.png" alt="">
+          <h1 class="text-[#1F2937] text-2xl font-semibold">GitHub Issues Tracker</h1>
+        </div>
+        <div class="flex gap-2">
+          <input id="searchInput" type="text" placeholder="Search issues..." class="input input-bordered w-24 md:w-auto" />
+          <div class="">
+            <button id="searchBtn" class="btn btn-primary">Search</button>
+          </div>
         </div>
       </div>
-    </div>
-    </div>
-    </div>
-  </section>
-
-
-  <!-- Tab Sectionn -->
-
-  <section class="w-full max-w-[1500px] md:p-5 p-2">
-    <div class="card w-full  md:mt-10 mt-5 bg-base-100 card-xs shadow-sm">
-      <div class="card-body flex flex-row items-center  gap-2 md:p-5 p-3 w-full">
-        <button class="btn btn-primary md:px-10">All</button>
-        <button class="btn md:px-10 border border-gray-200">Open</button>
-        <button class="btn md:px-10 border border-gray-200">Closed</button>
       </div>
-    </div>
-  </section>
+      </div>
+    </header>
 
-  <!-- Issue Tab  -->
+    <!-- Tab Sectionn -->
 
-  <section class="card w-full md:mt-10 mt-5 bg-base-100 card-xs shadow-sm">
-    <div class="flex md:flex-row flex-col md:items-center justify-between gap-2 w-full p-5 border-b border-gray-200">
-
-      <!-- left -->
-
-      <div class="flex gap-2">
-        <img class="bg-[#ECE4FF] p-2 rounded-full" src="assets/Aperture.png" alt="">
-        <div>
-          <h2 class="text-[#1F2937] font-bold text-xl">0 Issues</h2>
-          <p class="text-[#64748B] font-medium text-sm">Track and manage your project issues</p>
+    <section class="w-full max-w-[1500px] md:p-5 p-2">
+      <div class="card w-full  md:mt-10 mt-5 bg-base-100 card-xs shadow-sm">
+        <div class="card-body flex flex-row items-center  gap-2 md:p-5 p-3 w-full">
+          <button id="allTabBtn" class="btn btn-primary md:px-10">All</button>
+          <button id="openTabBtn" class="btn md:px-10 border border-gray-200">Open</button>
+          <button id="closedTabBtn" class="btn md:px-10 border border-gray-200">Closed</button>
         </div>
       </div>
 
-      <!-- right  -->
+      <!-- Issue Tab  -->
 
-      <div class="flex gap-4">
-        <div class="flex items-center gap-2">
-          <span class="bg-[#00A96E] text-white p-1 size-3 rounded-full"></span>
-          <h4 class="font-medium">Open</h4>
+      <div class="card w-full md:mt-10 mt-5 bg-base-100 card-xs shadow-sm">
+        <div
+          class="flex md:flex-row flex-col md:items-center justify-between gap-2 w-full p-5 border-b border-gray-200">
+
+          <!-- left -->
+
+          <div class="flex gap-2">
+            <img class="bg-[#ECE4FF] p-2 rounded-full" src="assets/Aperture.png" alt="">
+            <div>
+              <h2 id="issue-Counter" class="text-[#1F2937] font-bold text-xl">0 Issues</h2>
+              <p class="text-[#64748B] font-medium text-sm">Track and manage your project issues</p>
+            </div>
+          </div>
+
+          <!-- right  -->
+
+          <div class="flex gap-4">
+            <div class="flex items-center gap-2">
+              <span class="bg-[#00A96E] text-white p-1 size-3 rounded-full"></span>
+              <h4 class="font-medium">Open</h4>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <span class="bg-[#A855F7] text-white p-1 size-3 rounded-full"></span>
+              <h4 class="font-medium">Closed</h4>
+            </div>
+          </div>
         </div>
 
-        <div class="flex items-center gap-2">
-          <span class="bg-[#A855F7] text-white p-1 size-3 rounded-full"></span>
-          <h4 class="font-medium">Closed</h4>
+        <!-- issue cards  -->
+
+        <div id="issue-Cards-Container"
+          class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 w-full p-5"></div>
+
+        <!-- loading spinner -->
+
+        <div id="loadingSpinner" class="h-100 items-center justify-center w-full hidden">
+          <span class="loading loading-ring loading-xl scale-140"></span>
         </div>
       </div>
-    </div>
-  </section>
+
+      <!-- modal card  -->
+
+      <!-- <dialog id="card-Modal" class="modal modal-bottom sm:modal-middle"></dialog> -->
 
 
-  
+      <!-- modal -->
+      <dialog id="issue-Modal" class="modal">
+        <div class="modal-box max-w-2xl">
+
+          <h3 id="modal-Title" class="text-2xl font-bold mb-2"></h3>
+
+          <div class="flex items-center gap-3 text-sm text-gray-500 mb-4">
+            <span id="modal-Status" class="px-3 py-1 text-xs rounded-full bg-green-500 text-white"></span>
+            <span>•</span>
+            <span id="modal-Author"></span>
+            <span>•</span>
+            <span id="modal-Date"></span>
+          </div>
+
+          <div id="modal-Labels" class="flex gap-2 mb-4"></div>
+
+          <p id="modal-Description" class="text-gray-600 mb-6"></p>
+
+          <div class="bg-gray-100 rounded-lg p-4 flex justify-between items-center">
+            <div>
+              <p class="text-sm text-gray-500">Assignee:</p>
+              <p id="modal-Assignee" class="font-semibold"></p>
+            </div>
+
+            <div>
+              <p class="text-sm text-gray-500">Priority:</p>
+              <span id="modal-Priority" class="px-3 py-1 text-xs rounded-full"></span>
+            </div>
+          </div>
+
+          <div class="modal-action">
+            <button class="btn btn-primary" onclick="issueModal.close()">Close</button>
+          </div>
+
+        </div>
+      </dialog>
+
+
+
+    </section>
+  </main>
+
+
+
 
   <script src="script/main.js"></script>
 

@@ -1,21 +1,22 @@
-document.getElementById("sign-btn").addEventListener("click", function () {
+const signInBtn = document.getElementById("sign-btn");
 
-    const inputuser = document.getElementById("input-user");
-    const userin = inputuser.value;
-    console.log(userin);
+if (signInBtn) {
+    signInBtn.addEventListener("click", function () {
+        const username = document.getElementById("inputUser").value;
+        const password = document.getElementById("iinputPass").value;
 
+        if (username === "admin" && password === "admin123") {
+            window.location.href = "home.html"
+        } else {
+            alert("Invalid Credentials!")
+        }
 
-    const inputpass = document.getElementById("input-pass");
-    const passin = inputpass.value;
-    console.log(passin);
+    });
 
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            loginBtn.click();
+        }
+    });
 
-    if (userin == "admin" && passin == "admin123") {
-        alert("login Success");
-        window.location.assign("/home.html")
-    } else {
-        alert("login Failed");
-        return;
-    }
-
-});
+}
