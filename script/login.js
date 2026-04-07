@@ -6,7 +6,7 @@ if (signInBtn) {
         const password = document.getElementById("iinputPass").value;
 
         if (username === "admin" && password === "admin123") {
-            window.location.href = "home.html"
+            window.location.assign("home.html")
         } else {
             alert("Invalid Credentials!")
         }
